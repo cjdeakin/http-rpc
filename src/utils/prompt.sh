@@ -53,7 +53,7 @@ prompt_selection() {
 			log "$i) ${options[i - 1]}"
 		done
 
-		read -p "#? " -r input
+		read -p "#? " -r input >&2
 		if [[ -z "${input}" || "${input}" -le "0" || "${input}" > "${#options[@]}" || -z "${options[input - 1]}" ]] ; then
 			log "Invalid selection: ${input}"
 			continue
@@ -61,7 +61,7 @@ prompt_selection() {
 
 		input="${options[input - 1]}"
 		[[ "${input}" == "cancel" ]] && return 1
-		log "${input}"
+		printf '%s\n' "${input}"
 		break
 	done
 }
