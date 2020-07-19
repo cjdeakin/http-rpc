@@ -117,6 +117,7 @@ create_request_template() {
 			# log: print all arguments to stderr
 			# log2: prints stdin to stderr, for use with <<- EOF notation
 			# generate_body: Run template engine against a body, file is stored in TMPFILES[-1]
+			# prompt: ask user for input and read a single line from stdin, e.g. input="\$(prompt "Enter a value.")"
 			# prompt_selection: ask user to select something from a list of options, e.g. selection="\$(prompt_selection "Choose an option!" "First option" "2")"
 			# send: send a different request, results will be located in TMPDIRS[-1] as files body, headers, raw_body, and response_code
 			# tmpdir: create a temporary directory that will be deleted on program exit, new dir is stored in TMPDIRS[-1]
@@ -156,6 +157,7 @@ create_service_template() {
 			# log: print all arguments to stderr
 			# log2: prints stdin to stderr, for use with <<- EOF notation
 			# generate_body: Run template engine against a body, file is stored in TMPFILES[-1]
+			# prompt: ask user for input and read a single line from stdin, e.g. input="\$(prompt "Enter a value.")"
 			# prompt_selection: ask user to select something from a list of options, e.g. selection="\$(prompt_selection "Choose an option!" "First option" "2")"
 			# send: send a different request, results will be located in TMPDIRS[-1] as files body, headers, raw_body, and response_code
 			# tmpdir: create a temporary directory that will be deleted on program exit, new dir is stored in TMPDIRS[-1]

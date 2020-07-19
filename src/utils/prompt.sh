@@ -35,6 +35,16 @@ prompt_yesno() {
 	done
 }
 
+# Prompt user for arbitrary input.
+# Input will be output to stdout.
+#
+# $@: prompt
+prompt() {
+	local input
+	read -p "$@ " -r input >&2
+	printf '%s\n' "${input}"
+}
+
 # Prompt user to select an option.
 # Selected option will be output to stdout.
 #
