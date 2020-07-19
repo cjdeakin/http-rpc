@@ -4,7 +4,7 @@ set -E -e -o pipefail
 [[ -v "DEBUG" ]] && set -x
 
 [[ -v "HTTP_RPC_BASEDIR" ]] || declare -r HTTP_RPC_BASEDIR="${XDG_CONFIG_HOME:-${HOME}/.config}/http-rpc"
-declare -r HTTP_RPC_VERSION="0.1.0"
+declare -r HTTP_RPC_VERSION="0.1.1"
 
 declare -r EDITOR="${EDITOR:-vim}"
 
