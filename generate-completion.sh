@@ -6,7 +6,7 @@ set -e -o pipefail
 cd "$(dirname "$(realpath "$0")")"
 
 export HTTP_RPC_VARS_ONLY=1
-source "http-rpc"
+source "./http-rpc"
 
 declare -r OUTPUT="http-rpc-completion.sh"
 declare -r TMP="$(mktemp)"
@@ -45,6 +45,8 @@ start_reply() {
 }
 
 cat << EOF
+# http-rpc completion function
+# For use with version ${HTTP_RPC_VERSION}
 __http_rpc_complete() {
 	local CWORD_ARG_ONLY=false
 	local -a COMMAND_LINE=()
